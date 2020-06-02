@@ -129,6 +129,9 @@
         "class",
         "wood"
       ],
+      "layout": {
+        "visibility": "none"
+      },
       "paint": {
         "fill-color": "#6a4",
         "fill-opacity": 0.2,
@@ -3032,7 +3035,8 @@
         ],
         "text-radial-offset": 0.7,
         "text-justify": "center",
-        "text-anchor": "center"
+        "text-anchor": "center",
+        "visibility": "visible"
       },
       "paint": {
         "text-halo-blur": 1,
@@ -3434,7 +3438,8 @@
             ]
           ]
         ],
-        "visibility": "visible"
+        "visibility": "visible",
+        "symbol-spacing": 250
       },
       "paint": {
         "text-halo-blur": 0.5,
@@ -3703,6 +3708,36 @@
       "paint": {
         "line-color": "rgba(170, 208, 166, 1)",
         "line-width": 0.5
+      }
+    },
+    {
+      "id": "elevation",
+      "type": "symbol",
+      "source": "gsi-japan",
+      "source-layer": "elevation",
+      "filter": [
+        "all",
+        [
+          "has",
+          "alti"
+        ],
+        [
+          "==",
+          "$type",
+          "Point"
+        ]
+      ],
+      "layout": {
+        "text-field": "{alti}",
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "icon-size": 1,
+        "text-size": 10,
+        "text-radial-offset": 0.7
+      },
+      "paint": {
+        "text-color": "rgba(108, 158, 128, 1)"
       }
     }
   ],
