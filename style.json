@@ -3694,6 +3694,16 @@
         "text-halo-width": 1.2,
         "text-halo-color": "rgba(255,255,255,0.8)"
       }
+    },
+    {
+      "id": "contour",
+      "type": "line",
+      "source": "gsi-japan",
+      "source-layer": "contour",
+      "paint": {
+        "line-color": "rgba(170, 208, 166, 1)",
+        "line-width": 0.5
+      }
     }
   ],
   "id": "geolonia-gsi"
