@@ -3739,6 +3739,34 @@
       "paint": {
         "text-color": "rgba(108, 158, 128, 1)"
       }
+    },
+    {
+      "id": "triangular-point",
+      "type": "symbol",
+      "source": "gsi-japan",
+      "source-layer": "symbol",
+      "filter": [
+        "all",
+        [
+          "has",
+          "alti"
+        ],
+        [
+          "==",
+          "$type",
+          "Point"
+        ]
+      ],
+      "layout": {
+        "text-size": 10,
+        "text-field": "{alti}",
+        "text-font": [
+          "Noto Sans Regular"
+        ]
+      },
+      "paint": {
+        "text-color": "rgba(108, 158, 128, 1)"
+      }
     }
   ],
   "id": "geolonia-gsi"
