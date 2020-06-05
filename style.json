@@ -3759,7 +3759,24 @@
       ],
       "layout": {
         "text-size": 10,
-        "text-field": "{alti}",
+        "text-field": [
+          "to-string",
+          [
+            "*",
+            0.1,
+            [
+              "round",
+              [
+                "*",
+                10,
+                [
+                  "get",
+                  "alti"
+                ]
+              ]
+            ]
+          ]
+        ],
         "text-font": [
           "Noto Sans Regular"
         ]
