@@ -3767,6 +3767,33 @@
       "paint": {
         "text-color": "rgba(108, 158, 128, 1)"
       }
+    },
+    {
+      "id": "contour-label",
+      "type": "symbol",
+      "source": "gsi-japan",
+      "source-layer": "contour",
+      "filter": [
+        "all",
+        [
+          "has",
+          "alti"
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-field": [
+          "get",
+          "alti"
+        ],
+        "text-size": 10
+      },
+      "paint": {
+        "text-color": "rgba(108, 158, 128, 1)"
+      }
     }
   ],
   "id": "geolonia-gsi"
