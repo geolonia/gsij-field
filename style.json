@@ -3705,9 +3705,81 @@
       "type": "line",
       "source": "gsi-japan",
       "source-layer": "contour",
+      "filter": [
+        "all",
+        [
+          "!=",
+          [
+            "to-number",
+            [
+              "get",
+              "alti"
+            ]
+          ],
+          [
+            "*",
+            100,
+            [
+              "round",
+              [
+                "*",
+                0.01,
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "alti"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
       "paint": {
         "line-color": "rgba(170, 208, 166, 1)",
         "line-width": 0.5
+      }
+    },
+    {
+      "id": "contour-main",
+      "type": "line",
+      "source": "gsi-japan",
+      "source-layer": "contour",
+      "filter": [
+        "all",
+        [
+          "==",
+          [
+            "to-number",
+            [
+              "get",
+              "alti"
+            ]
+          ],
+          [
+            "*",
+            100,
+            [
+              "round",
+              [
+                "*",
+                0.01,
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "alti"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(170, 208, 166, 1)",
+        "line-width": 1
       }
     },
     {
@@ -3762,8 +3834,7 @@
         "text-field": [
           "to-string",
           [
-            "*",
-            0.1,
+            "/",
             [
               "round",
               [
@@ -3774,7 +3845,8 @@
                   "alti"
                 ]
               ]
-            ]
+            ],
+            10
           ]
         ],
         "text-font": [
