@@ -3759,12 +3759,12 @@
           ],
           [
             "*",
-            100,
+            50,
             [
               "round",
               [
                 "*",
-                0.01,
+                0.02,
                 [
                   "to-number",
                   [
@@ -3865,12 +3865,37 @@
       "filter": [
         "all",
         [
-          "has",
-          "alti"
+          "==",
+          [
+            "to-number",
+            [
+              "get",
+              "alti"
+            ]
+          ],
+          [
+            "*",
+            50,
+            [
+              "round",
+              [
+                "*",
+                0.02,
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "alti"
+                  ]
+                ]
+              ]
+            ]
+          ]
         ]
       ],
       "layout": {
         "symbol-placement": "line",
+        "symbol-spacing": 1000,
         "text-font": [
           "Noto Sans Regular"
         ],
