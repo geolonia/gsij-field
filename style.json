@@ -518,7 +518,7 @@
       "layout": {
         "line-cap": "round",
         "line-join": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "#EEEEEE",
@@ -3928,6 +3928,29 @@
       }
     },
     {
+      "id": "trail",
+      "type": "line",
+      "source": "gsi-japan",
+      "source-layer": "road",
+      "filter": [
+        "all",
+        [
+          "==",
+          "ftCode",
+          2701
+        ]
+      ],
+      "layout": {
+        "line-cap": [
+          "literal",
+          "butt"
+        ]
+      },
+      "paint": {
+        "line-width": 0.5
+      }
+    },
+    {
       "id": "walking-trail",
       "type": "line",
       "source": "gsi-japan",
@@ -3947,7 +3970,11 @@
         ]
       },
       "paint": {
-        "line-width": 1
+        "line-width": 0.5,
+        "line-dasharray": [
+          6,
+          2
+        ]
       }
     }
   ],
