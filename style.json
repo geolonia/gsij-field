@@ -3908,6 +3908,24 @@
       "paint": {
         "text-color": "rgba(108, 158, 128, 1)"
       }
+    },
+    {
+      "id": "power-line",
+      "type": "line",
+      "source": "gsi-japan",
+      "source-layer": "structurel",
+      "filter": [
+        "all",
+        [
+          "==",
+          "ftCode",
+          8202
+        ]
+      ],
+      "paint": {
+        "line-width": 0.5,
+        "line-color": "#888888"
+      }
     }
   ],
   "id": "geolonia-gsij-field"
