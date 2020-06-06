@@ -557,7 +557,7 @@
       "layout": {
         "line-cap": "round",
         "line-join": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "#FEE2BF",
@@ -642,7 +642,7 @@
       "layout": {
         "line-cap": "butt",
         "line-join": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "#FEE2BF",
@@ -734,7 +734,7 @@
       "layout": {
         "line-cap": "round",
         "line-join": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "#FDD8AE",
@@ -820,7 +820,7 @@
       "layout": {
         "line-cap": "round",
         "line-join": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "#FDD8AE",
@@ -3925,6 +3925,29 @@
       "paint": {
         "line-width": 0.5,
         "line-color": "#888888"
+      }
+    },
+    {
+      "id": "walking-trail",
+      "type": "line",
+      "source": "gsi-japan",
+      "source-layer": "road",
+      "filter": [
+        "all",
+        [
+          ">=",
+          "ftCode",
+          2720
+        ]
+      ],
+      "layout": {
+        "line-cap": [
+          "literal",
+          "butt"
+        ]
+      },
+      "paint": {
+        "line-width": 1
       }
     }
   ],
