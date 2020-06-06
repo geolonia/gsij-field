@@ -3701,6 +3701,58 @@
       }
     },
     {
+      "id": "contour-label",
+      "type": "symbol",
+      "source": "gsi-japan",
+      "source-layer": "contour",
+      "filter": [
+        "all",
+        [
+          "==",
+          [
+            "to-number",
+            [
+              "get",
+              "alti"
+            ]
+          ],
+          [
+            "*",
+            50,
+            [
+              "round",
+              [
+                "*",
+                0.02,
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "alti"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 1000,
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-field": [
+          "get",
+          "alti"
+        ],
+        "text-size": 10
+      },
+      "paint": {
+        "text-color": "rgba(108, 158, 128, 1)"
+      }
+    },
+    {
       "id": "contour",
       "type": "line",
       "source": "gsi-japan",
@@ -3852,58 +3904,6 @@
         "text-font": [
           "Noto Sans Regular"
         ]
-      },
-      "paint": {
-        "text-color": "rgba(108, 158, 128, 1)"
-      }
-    },
-    {
-      "id": "contour-label",
-      "type": "symbol",
-      "source": "gsi-japan",
-      "source-layer": "contour",
-      "filter": [
-        "all",
-        [
-          "==",
-          [
-            "to-number",
-            [
-              "get",
-              "alti"
-            ]
-          ],
-          [
-            "*",
-            50,
-            [
-              "round",
-              [
-                "*",
-                0.02,
-                [
-                  "to-number",
-                  [
-                    "get",
-                    "alti"
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ]
-      ],
-      "layout": {
-        "symbol-placement": "line",
-        "symbol-spacing": 1000,
-        "text-font": [
-          "Noto Sans Regular"
-        ],
-        "text-field": [
-          "get",
-          "alti"
-        ],
-        "text-size": 10
       },
       "paint": {
         "text-color": "rgba(108, 158, 128, 1)"
