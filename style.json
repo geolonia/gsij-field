@@ -3671,58 +3671,6 @@
       }
     },
     {
-      "id": "contour-label",
-      "type": "symbol",
-      "source": "gsi-japan",
-      "source-layer": "contour",
-      "filter": [
-        "all",
-        [
-          "==",
-          [
-            "to-number",
-            [
-              "get",
-              "alti"
-            ]
-          ],
-          [
-            "*",
-            50,
-            [
-              "round",
-              [
-                "*",
-                0.02,
-                [
-                  "to-number",
-                  [
-                    "get",
-                    "alti"
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ]
-      ],
-      "layout": {
-        "symbol-placement": "line",
-        "symbol-spacing": 1000,
-        "text-font": [
-          "Noto Sans Regular"
-        ],
-        "text-field": [
-          "get",
-          "alti"
-        ],
-        "text-size": 10
-      },
-      "paint": {
-        "text-color": "rgba(108, 158, 128, 1)"
-      }
-    },
-    {
       "id": "contour",
       "type": "line",
       "source": "gsi-japan",
@@ -3805,6 +3753,60 @@
       }
     },
     {
+      "id": "contour-label",
+      "type": "symbol",
+      "source": "gsi-japan",
+      "source-layer": "contour",
+      "filter": [
+        "all",
+        [
+          "==",
+          [
+            "to-number",
+            [
+              "get",
+              "alti"
+            ]
+          ],
+          [
+            "*",
+            50,
+            [
+              "round",
+              [
+                "*",
+                0.02,
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "alti"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 1000,
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-field": [
+          "get",
+          "alti"
+        ],
+        "text-size": 10
+      },
+      "paint": {
+        "text-color": "rgba(108, 158, 128, 1)",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 2
+      }
+    },
+    {
       "id": "elevation",
       "type": "symbol",
       "source": "gsi-japan",
@@ -3831,7 +3833,10 @@
         "text-radial-offset": 0.7
       },
       "paint": {
-        "text-color": "rgba(108, 158, 128, 1)"
+        "text-color": "rgba(108, 158, 128, 1)",
+        "icon-halo-width": 0,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 2
       }
     },
     {
@@ -3876,7 +3881,9 @@
         ]
       },
       "paint": {
-        "text-color": "rgba(108, 158, 128, 1)"
+        "text-color": "rgba(108, 158, 128, 1)",
+        "text-halo-width": 2,
+        "text-halo-color": "#ffffff"
       }
     },
     {
