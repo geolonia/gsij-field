@@ -1,19 +1,19 @@
 {
   "version": 8,
-  "name": "Geolonia Basic with buildings from GSI Japan",
+  "name": "GSI Japan + OpenStreetMap based style for Geolonia",
   "metadata": {},
   "sources": {
+    "natural-earth": {
+      "type": "vector",
+      "url": "https://cdn.geolonia.com/tiles/natural-earth.json"
+    },
     "gsi-japan": {
       "type": "vector",
-      "tiles": [
-        "https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf"
-      ],
-      "attribution": "<a href=\"https://www.gsi.go.jp/\">© GSI Japan</a>",
-      "minzoom": 6,
-      "maxzoom": 16
+      "url": "https://cdn.geolonia.com/tiles/gsi.json"
     },
     "geolonia": {
       "type": "vector",
+      "minzoom": 8,
       "url": "https://api.geolonia.com/v1/sources?key=YOUR-API-KEY"
     }
   },
@@ -25,36 +25,6 @@
       "type": "background",
       "paint": {
         "background-color": "rgba(254, 254, 254, 1)"
-      }
-    },
-    {
-      "id": "landcover-glacier",
-      "type": "fill",
-      "source": "geolonia",
-      "source-layer": "landcover",
-      "filter": [
-        "==",
-        "subclass",
-        "glacier"
-      ],
-      "layout": {
-        "visibility": "visible"
-      },
-      "paint": {
-        "fill-color": "#fff",
-        "fill-opacity": {
-          "base": 1,
-          "stops": [
-            [
-              0,
-              0.9
-            ],
-            [
-              10,
-              0.3
-            ]
-          ]
-        }
       }
     },
     {
@@ -217,7 +187,7 @@
     {
       "id": "water-offset",
       "type": "fill",
-      "source": "geolonia",
+      "source": "natural-earth",
       "source-layer": "water",
       "maxzoom": 8,
       "filter": [
@@ -242,36 +212,6 @@
       },
       "paint": {
         "fill-color": "rgba(152, 209, 252, 1)"
-      }
-    },
-    {
-      "id": "landcover-ice-shelf",
-      "type": "fill",
-      "source": "geolonia",
-      "source-layer": "landcover",
-      "filter": [
-        "==",
-        "subclass",
-        "ice_shelf"
-      ],
-      "layout": {
-        "visibility": "visible"
-      },
-      "paint": {
-        "fill-color": "#fff",
-        "fill-opacity": {
-          "base": 1,
-          "stops": [
-            [
-              0,
-              0.9
-            ],
-            [
-              10,
-              0.3
-            ]
-          ]
-        }
       }
     },
     {
@@ -2688,6 +2628,23 @@
       }
     },
     {
+      "id": "boundary-natural-earth",
+      "type": "line",
+      "source": "natural-earth",
+      "source-layer": "admin",
+      "maxzoom": 6,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#999999",
+        "line-width": 1,
+        "line-blur": 0.4
+      }
+    },
+    {
       "id": "boundary",
       "type": "line",
       "source": "gsi-japan",
@@ -2875,40 +2832,53 @@
     {
       "id": "building-3d",
       "type": "fill-extrusion",
+      "metadata": {
+        "visible-on-3d": true
+      },
       "source": "gsi-japan",
       "source-layer": "building",
       "minzoom": 16,
       "layout": {
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": {
         "fill-extrusion-color": "#EEEEEE",
         "fill-extrusion-height": [
-          "interpolate",
+          "match",
           [
-            "linear"
+            "get",
+            "ftCode"
           ],
-          [
-            "zoom"
-          ],
+          3101,
+          3,
+          3102,
           15,
-          0,
-          15.05,
+          3013,
+          50,
+          3111,
+          3,
+          3112,
+          10,
           5
         ],
-        "fill-extrusion-base": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          0,
-          15.05,
-          1
-        ],
+        "fill-extrusion-opacity": 0.4
+      }
+    },
+    {
+      "id": "structurea-3d",
+      "type": "fill-extrusion",
+      "metadata": {
+        "visible-on-3d": true
+      },
+      "source": "gsi-japan",
+      "source-layer": "structurea",
+      "minzoom": 16,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-extrusion-color": "#EEEEEE",
+        "fill-extrusion-height": 30,
         "fill-extrusion-opacity": 0.4
       }
     },
