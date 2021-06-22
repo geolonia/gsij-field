@@ -581,8 +581,7 @@
       ],
       "layout": {
         "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "none"
+        "line-join": "round"
       },
       "paint": {
         "line-color": "#FEE2BF",
@@ -955,92 +954,6 @@
       }
     },
     {
-      "id": "highway-motorway",
-      "type": "line",
-      "source": "gsi-japan",
-      "source-layer": "road",
-      "minzoom": 4,
-      "filter": [
-        "any",
-        [
-          "all",
-          [
-            ">=",
-            "ftCode",
-            2700
-          ],
-          [
-            "<",
-            "ftCode",
-            2800
-          ],
-          [
-            "!=",
-            "ftCode",
-            2702
-          ],
-          [
-            "!=",
-            "ftCode",
-            2703
-          ],
-          [
-            "!=",
-            "ftCode",
-            2704
-          ],
-          [
-            "any",
-            [
-              "==",
-              "motorway",
-              1
-            ],
-            [
-              "==",
-              "rdCtg",
-              3
-            ]
-          ]
-        ],
-        [
-          "==",
-          "ftCode",
-          52703
-        ]
-      ],
-      "layout": {
-        "line-cap": "round",
-        "visibility": "visible",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": "#7FCBB7",
-        "line-width": {
-          "stops": [
-            [
-              4,
-              1
-            ],
-            [
-              15,
-              4
-            ],
-            [
-              17,
-              9
-            ],
-            [
-              24,
-              40
-            ]
-          ]
-        },
-        "line-blur": 0,
-        "line-translate-anchor": "map"
-      }
-    },
-    {
       "id": "highway-minor-bridge-casing",
       "type": "line",
       "source": "gsi-japan",
@@ -1106,7 +1019,7 @@
             ]
           ]
         },
-        "line-color": "rgba(214, 114, 114, 1)"
+        "line-color": "rgba(214, 182, 114, 1)"
       }
     },
     {
@@ -1155,7 +1068,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(214, 114, 114, 1)",
+        "line-color": "rgba(214, 182, 114, 1)",
         "line-width": {
           "stops": [
             [
@@ -1242,7 +1155,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(214, 114, 114, 1)",
+        "line-color": "rgba(214, 182, 114, 1)",
         "line-width": {
           "stops": [
             [
@@ -3925,7 +3838,93 @@
       },
       "paint": {
         "line-width": 1,
-        "line-color": "rgba(214, 114, 114, 1)"
+        "line-color": "rgba(214, 182, 114, 1)"
+      }
+    },
+    {
+      "id": "highway-motorway",
+      "type": "line",
+      "source": "gsi-japan",
+      "source-layer": "road",
+      "minzoom": 4,
+      "filter": [
+        "any",
+        [
+          "all",
+          [
+            ">=",
+            "ftCode",
+            2700
+          ],
+          [
+            "<",
+            "ftCode",
+            2800
+          ],
+          [
+            "!=",
+            "ftCode",
+            2702
+          ],
+          [
+            "!=",
+            "ftCode",
+            2703
+          ],
+          [
+            "!=",
+            "ftCode",
+            2704
+          ],
+          [
+            "any",
+            [
+              "==",
+              "motorway",
+              1
+            ],
+            [
+              "==",
+              "rdCtg",
+              3
+            ]
+          ]
+        ],
+        [
+          "==",
+          "ftCode",
+          52703
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "visibility": "visible",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#7FCBB7",
+        "line-width": {
+          "stops": [
+            [
+              4,
+              1
+            ],
+            [
+              15,
+              4
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              24,
+              40
+            ]
+          ]
+        },
+        "line-blur": 0,
+        "line-translate-anchor": "map"
       }
     },
     {
@@ -3953,7 +3952,7 @@
           6,
           2
         ],
-        "line-color": "rgba(214, 114, 114, 1)"
+        "line-color": "rgba(214, 182, 114, 1)"
       }
     }
   ],
