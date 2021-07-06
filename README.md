@@ -2,7 +2,7 @@
 
 This is a Mapbox GL JS based style for [Geolonia](https://geolonia.com/).
 
-- [DEMO](https://geolonia.github.io/preview/#geolonia/outdoors)
+- [DEMO](https://geolonia.github.io/preview?style=geolonia/outdoors)
 - [DEMO on editor](https://editor.geolonia.com/?style=https://raw.githubusercontent.com/geolonia/outdoors/master/style.json)
 
 ## Development
